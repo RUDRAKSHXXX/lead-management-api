@@ -16,7 +16,6 @@ router.post("/", createLead);
 router.put("/:id", updateLead);
 router.delete("/:id", deleteLead);
 
-// 🔥 IMPORTANT ROUTE
 router.put("/:id/status", updateStatus);
 
 module.exports = router;
