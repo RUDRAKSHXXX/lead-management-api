@@ -127,13 +127,7 @@ Invalid transitions are rejected with a 400 error.
   * Implement pagination for large datasets
   * Add logging and monitoring
   * Use Docker for containerization
-
----
-
-## Sample Data (Optional)
-
-You can create sample leads using the POST endpoint or extend the project with a seed script.
-
+  
 ---
 
 ## .gitignore
