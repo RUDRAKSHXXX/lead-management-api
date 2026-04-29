@@ -1,7 +1,7 @@
 const Lead = require("../models/leadModel");
 
 
-// ✅ CREATE LEAD
+// CREATING LEAD
 exports.createLead = async (req, res) => {
   try {
     const lead = await Lead.create(req.body);
@@ -11,7 +11,7 @@ exports.createLead = async (req, res) => {
   }
 };
 
-// ✅ GET ALL LEADS (with filter)
+//  GET ALL LEADS (filter)
 exports.getLeads = async (req, res) => {
   try {
     const { status } = req.query;
@@ -30,7 +30,7 @@ exports.getLeads = async (req, res) => {
 };
 
 
-// ✅ GET SINGLE LEAD
+// GET SINGLE LEAD
 exports.getLeadById = async (req, res) => {
   try {
     const lead = await Lead.findById(req.params.id);
@@ -46,7 +46,7 @@ exports.getLeadById = async (req, res) => {
 };
 
 
-// ✅ UPDATE LEAD
+// UPDATE LEAD
 exports.updateLead = async (req, res) => {
   try {
     const lead = await Lead.findByIdAndUpdate(
@@ -66,7 +66,7 @@ exports.updateLead = async (req, res) => {
 };
 
 
-// ✅ DELETE LEAD
+// DELETE LEAD
 exports.deleteLead = async (req, res) => {
   try {
     const lead = await Lead.findByIdAndDelete(req.params.id);
@@ -82,7 +82,7 @@ exports.deleteLead = async (req, res) => {
 };
 
 
-// 🔥 STATUS TRANSITION LOGIC (IMPORTANT PART)
+// STATUS TRANSITION LOGIC
 const allowedTransitions = {
   NEW: ["CONTACTED", "LOST"],
   CONTACTED: ["QUALIFIED", "LOST"],
